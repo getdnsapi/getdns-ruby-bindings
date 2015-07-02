@@ -1,0 +1,31 @@
+# edns_extended_rcode_module.rb
+require_relative '../../ext/getdns/getdns'
+require 'awesome_print'
+
+module Edns_extended_rcode_module
+  def self.edns_extended_rcode(domain_name)
+    options = {
+      #request timeout time in millis
+      "timeout" => 1000,
+
+      #setting edns_extended_rcode value must between 0 to 255. default is 0
+      "edns_extended_rcode" => 0,
+
+      # option for stub resolver context
+      "stub" => true,
+
+      #upstream recursive servers
+      "upstreams" => ["8.8.8.8"],
+    }
+
+    #creating context
+    ctx = Getdns::Context.new(options)
+
+    #calling lookup
+    x = ctx.lookup(domain_name)
+
+    #awesome print
+    "edns_version result = #{ap x}"
+
+  end
+end

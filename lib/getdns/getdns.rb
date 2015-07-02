@@ -1,0 +1,70 @@
+# getdns.rb
+filePath = File.dirname(__FILE__)
+
+require filePath+"/basic_resolution_recursing_module"
+require filePath+"/basic_resolution_stub_module"
+require filePath+"/use_threads_module"
+require filePath+"/upstream_recursive_servers_module"
+require filePath+"/stub_resolvers_module"
+require filePath+"/return_dnssec_status_module"
+require filePath+"/dns_transport_module"
+require filePath+"/timeout_module"
+require filePath+"/namespaces_module"
+require filePath+"/follow_redirects_module"
+require filePath+"/dnssec_allowed_skew_module"
+require filePath+"/getdns_lookup_with_options"
+require filePath+"/getdns_general_with_options"
+require filePath+"/getdns_hostname_with_options"
+require filePath+"/getdns_service_with_options"
+require filePath+"/getdns_lookup_without_options"
+require filePath+"/getdns_general_without_options"
+require filePath+"/getdns_hostname_without_options"
+require filePath+"/getdns_service_without_options"
+require filePath+"/add_warning_for_bad_dns_extension"
+require filePath+"/dnssec_return_only_secure_extension"
+require filePath+"/dnssec_return_status_extension"
+require filePath+"/dnssec_return_validation_chain_extension"
+require filePath+"/return_both_v4_and_v6_extension"
+require filePath+"/specify_class_extension"
+require filePath+"/add_opt_parameters_extension"
+
+require filePath+"/async_address_module"
+require filePath+"/async_general_module"
+require filePath+"/async_hostname_module"
+require filePath+"/async_service_module"
+
+DOMAIN_NAME="verisign.com"
+IP="8.8.8.8"
+
+Basic_resolution_recursing_module.basic_resolution_recursing(DOMAIN_NAME)
+Basic_resolution_stub_module.basic_resolution_stub(DOMAIN_NAME)
+Use_threads_module.use_threads(DOMAIN_NAME)
+Upstream_recursive_servers_module.upstream_recursive_servers(DOMAIN_NAME)
+Stub_resolvers_module.stub_resolvers(DOMAIN_NAME)
+Return_dnssec_status_module.return_dnssec_status(DOMAIN_NAME)
+Dns_transport_module.dns_transport(DOMAIN_NAME)
+Timeout_module.timeout(DOMAIN_NAME)
+Namespaces_module.namespaces(DOMAIN_NAME)
+Follow_redirects_module.follow_redirects(DOMAIN_NAME)
+Dnssec_allowed_skew_module.dnssec_allowed_skew(DOMAIN_NAME)
+Getdns_lookup_with_options.basic_resolution_recursing(DOMAIN_NAME)
+Getdns_general_with_options.basic_general_resolution_recursing(DOMAIN_NAME)
+Getdns_hostname_with_options.basic_hostname_resolution(IP)
+Getdns_service_with_options.basic_service_resolution(DOMAIN_NAME)
+Getdns_lookup_without_options.basic_resolution_recursing(DOMAIN_NAME)
+Getdns_general_without_options.basic_general_resolution_recursing(DOMAIN_NAME)
+Getdns_hostname_without_options.basic_hostname_resolution(IP)
+Getdns_service_without_options.basic_service_resolution(DOMAIN_NAME)
+
+Add_warning_for_bad_dns_extension_module.add_warning_for_bad_dns_extension(DOMAIN_NAME)
+Dnssec_return_only_secure_extension_module.dnssec_return_only_secure_extension(DOMAIN_NAME)
+Dnssec_return_status_extension_module.dnssec_return_status_extension(DOMAIN_NAME)
+Dnssec_return_validation_chain_extension_module.dnssec_return_validation_chain(DOMAIN_NAME)
+Return_both_v4_and_v6_extension_module.return_both_v4_and_v6_extension(DOMAIN_NAME)
+Specify_class_extension_module.specify_class_extension(DOMAIN_NAME)
+Add_opt_parameters_extension_module.add_opt_parameters_extension(DOMAIN_NAME)
+
+Async_address_module.async_address(DOMAIN_NAME)
+Async_hostname_module.async_hostname(IP)
+Async_general_module.async_general(DOMAIN_NAME)
+Async_service_module.async_service(DOMAIN_NAME)
